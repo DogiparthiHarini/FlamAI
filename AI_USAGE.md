@@ -78,14 +78,3 @@ prioritize re-deriving myself before the defense.
   changed mid-draft once the constraints were laid out arithmetically. Since the assignment says
   there's no single right answer here, this is the section where I most need to be able to argue
   the reasoning myself rather than recite the memo's conclusion.
-
-## What I still need to do before the defense
-
-Reading this repo is not the same as being able to defend it. Before the live session I need to:
-personally re-run every script in `partA/scripts/`, `partA/results/corrected_analysis.py`, and
-`partB/capacity_calc.py` and watch the numbers come out; be able to redo the KV-cache and
-goodput arithmetic on paper without the script; and be ready to explain, in my own words, why
-sentence-ratio is the right denominator and why Qwen2.5 breaks the "any multilingual tokenizer
-fixes it" story — not just that it does. That's the actual gap between "an AI produced a correct
-repo" and "I can defend this," and it's on me to close it, not something this document can close
-by itself.
