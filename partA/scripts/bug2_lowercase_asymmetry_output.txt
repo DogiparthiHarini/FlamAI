@@ -1,0 +1,24 @@
+Is .lower() a no-op for each language? (lines changed / total)
+
+--- SAMPLE ---
+eng: lower() changes   10/10 lines | fertility WITH lower()=1.2652  WITHOUT=1.2293  delta=+2.92%
+hin: lower() changes    0/10 lines | fertility WITH lower()=7.4485  WITHOUT=7.4485  delta=+0.00%
+
+--- FULL FLORES-200 ---
+eng: lower() changes 1012/1012 lines | fertility WITH lower()=1.2874  WITHOUT=1.2444  delta=+3.45%
+hin: lower() changes   38/1012 lines | fertility WITH lower()=7.8651  WITHOUT=7.8647  delta=+0.00%
+ben: lower() changes   51/1012 lines | fertility WITH lower()=13.3848  WITHOUT=13.3841  delta=+0.01%
+mar: lower() changes   55/1012 lines | fertility WITH lower()=11.1860  WITHOUT=11.1853  delta=+0.01%
+kan: lower() changes   66/1012 lines | fertility WITH lower()=22.5698  WITHOUT=22.5686  delta=+0.01%
+tam: lower() changes   66/1012 lines | fertility WITH lower()=25.1270  WITHOUT=25.1256  delta=+0.01%
+tel: lower() changes  141/1012 lines | fertility WITH lower()=20.5656  WITHOUT=20.5598  delta=+0.03%
+mal: lower() changes   29/1012 lines | fertility WITH lower()=27.5845  WITHOUT=27.5838  delta=+0.00%
+
+=== Net effect on the headline eng-vs-X ratio (FULL corpus, gpt2) ===
+hin/eng ratio AS SHIPPED (both lowercased) = 6.109   IF NEITHER is lowercased = 6.320   (ratio inflated by -3.34% due to lowercasing only touching eng)
+ben/eng ratio AS SHIPPED (both lowercased) = 10.397   IF NEITHER is lowercased = 10.756   (ratio inflated by -3.34% due to lowercasing only touching eng)
+mar/eng ratio AS SHIPPED (both lowercased) = 8.689   IF NEITHER is lowercased = 8.989   (ratio inflated by -3.34% due to lowercasing only touching eng)
+kan/eng ratio AS SHIPPED (both lowercased) = 17.532   IF NEITHER is lowercased = 18.137   (ratio inflated by -3.34% due to lowercasing only touching eng)
+tam/eng ratio AS SHIPPED (both lowercased) = 19.518   IF NEITHER is lowercased = 20.192   (ratio inflated by -3.34% due to lowercasing only touching eng)
+tel/eng ratio AS SHIPPED (both lowercased) = 15.975   IF NEITHER is lowercased = 16.526   (ratio inflated by -3.34% due to lowercasing only touching eng)
+mal/eng ratio AS SHIPPED (both lowercased) = 21.427   IF NEITHER is lowercased = 22.166   (ratio inflated by -3.34% due to lowercasing only touching eng)

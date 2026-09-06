@@ -1,0 +1,75 @@
+======================================================================
+B1a: exact KV-cache bytes/token
+======================================================================
+bytes/token = 2 (K,V) x 28 layers x 8 kv_heads x 128 head_dim x 2 bytes(fp16)
+            = 114,688 bytes/token = 112.0 KiB/token
+
+======================================================================
+B1b: max concurrent 4096-token sequences
+======================================================================
+assumption: '24 GB' = 24 x 2^30 bytes = 25,769,803,776 bytes (flagged assumption -- GiB, not decimal GB)
+usable budget = 0.92 x total_mem = 23,708,219,474 bytes (22.080 GiB)
+weights = 4.20e+09 params x 2 bytes(fp16) = 8,400,000,000 bytes (7.823 GiB)
+non-KV overhead = 1.6 GiB = 1,717,986,918 bytes
+KV-cache budget = usable - weights - overhead = 13,590,232,556 bytes (12.657 GiB)
+max total cached tokens = 13,590,232,556 / 114,688 = 118,497 tokens
+max concurrent 4096-token sequences = 118,497 / 4096 = 28.93 -> 28 sequences
+
+======================================================================
+Check prediction against the log (long-prompt sweep, prompt+gen = 4096 = max_model_len)
+======================================================================
+ batch  kv_cache_util  preempted_seqs  wall_clock_s  reported_tok_s
+     4           0.16               0         28.98           565.4
+     8           0.31               0          36.3           902.6
+    16           0.62               0         49.97          1311.4
+    24           0.93               0         61.16          1607.4
+    32           0.97               7         94.71          1384.0
+    48           0.97              23        151.41          1298.5
+
+predicted ceiling ~28 concurrent full-length seqs. Log: batch=24 -> 0 preemptions (fits); batch=32 -> 7 preempted (32 > 28, overflow matches prediction); batch=48 -> 23 preempted (worse overflow).
+
+======================================================================
+B2/B3: reverse-engineer what reported_tok_s actually counts
+======================================================================
+ batch  prompt   gen    wall_s reported_tok_s  (p+g)*n/wall  match?
+     1     512   256     10.94           70.2          70.2     YES
+     2     512   256     11.61          132.3         132.3     YES
+     4     512   256     11.77          261.0         261.0     YES
+     8     512   256     12.40          495.4         495.5     YES
+    16     512   256     13.91          883.2         883.4     YES
+    32     512   256     16.50         1489.6        1489.5     YES
+    64     512   256     21.68         2267.3        2267.2     YES
+     4    3584   512     28.98          565.4         565.4     YES
+     8    3584   512     36.30          902.6         902.7     YES
+    16    3584   512     49.97         1311.4        1311.5     YES
+    24    3584   512     61.16         1607.4        1607.3     YES
+    32    3584   512     94.71         1384.0        1383.9     YES
+    48    3584   512    151.41         1298.5        1298.5     YES
+
+======================================================================
+Honest goodput (generated tokens/s only) -- two independent derivations, batch=24 long-prompt row
+======================================================================
+Method 1 (definition):        n*gen_len/wall_clock_s = 24*512/61.16 = 200.92 tok/s
+Method 2 (from reported col): reported_tok_s * gen/(prompt+gen) = 1607.4*(512/4096) = 200.93 tok/s
+agreement: YES (within rounding)
+
+Full goodput table (all rows), for context:
+ batch  prompt   gen reported_tok_s  goodput_tok_s  goodput/reported
+     1     512   256           70.2          23.40             0.333
+     2     512   256          132.3          44.10             0.333
+     4     512   256          261.0          87.00             0.333
+     8     512   256          495.4         165.16             0.333
+    16     512   256          883.2         294.46             0.333
+    32     512   256         1489.6         496.48             0.333
+    64     512   256         2267.3         755.72             0.333
+     4    3584   512          565.4          70.67             0.125
+     8    3584   512          902.6         112.84             0.125
+    16    3584   512         1311.4         163.94             0.125
+    24    3584   512         1607.4         200.92             0.125
+    32    3584   512         1384.0         172.99             0.125
+    48    3584   512         1298.5         162.31             0.125
+
+What batch48 'really' delivers vs the report's linear extrapolation:
+report's claim: batch48 ~ 3200 tok/s (linear extrapolation from batch24's 1607.4 reported_tok_s x2)
+actual log:     batch48 reported_tok_s = 1298.5 (LOWER than batch24's 1607.4, not higher)
+actual goodput: batch48 = 162.31 tok/s (also lower than batch24 goodput of 200.92)

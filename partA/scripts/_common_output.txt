@@ -1,0 +1,7 @@
+(empty stdout, exit code 0 -- verified, not omitted)
+
+_common.py is an import-only helper (path setup + `import fertility as orig`); it has no
+`print()` calls, so `python3 _common.py` run directly produces no output. This was checked by
+actually running it (`python3 _common.py > /tmp/check.txt 2>&1; wc -c /tmp/check.txt` -> 0
+bytes, exit 0), not assumed. It's meant to be imported by bug1/2/3/nonbug_random_seed.py, not
+run standalone -- see those scripts' own output files for what it produces when used for real.

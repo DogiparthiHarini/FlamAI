@@ -1,0 +1,16 @@
+--- SAMPLE ---
+eng: macro(as-shipped)=1.2652  micro(corpus total)=1.2532  macro overstates by +0.96%
+hin: macro(as-shipped)=7.4485  micro(corpus total)=7.4032  macro overstates by +0.61%
+  hin/eng ratio: macro=5.887  micro=5.908  (-0.35% difference from averaging choice alone)
+
+--- FULL FLORES-200 ---
+eng: macro(as-shipped)=1.2874  micro(corpus total)=1.2782  macro overstates by +0.72%
+hin: macro(as-shipped)=7.8651  micro(corpus total)=7.8247  macro overstates by +0.52%
+ben: macro(as-shipped)=13.3848  micro(corpus total)=13.2637  macro overstates by +0.91%
+mar: macro(as-shipped)=11.1860  micro(corpus total)=11.1094  macro overstates by +0.69%
+kan: macro(as-shipped)=22.5698  micro(corpus total)=22.2970  macro overstates by +1.22%
+tam: macro(as-shipped)=25.1270  micro(corpus total)=24.9004  macro overstates by +0.91%
+tel: macro(as-shipped)=20.5656  micro(corpus total)=20.4255  macro overstates by +0.69%
+mal: macro(as-shipped)=27.5845  micro(corpus total)=27.3311  macro overstates by +0.93%
+  hin/eng ratio: macro=6.109  micro=6.122  (-0.20% difference from averaging choice alone)
+

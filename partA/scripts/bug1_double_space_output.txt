@@ -1,0 +1,20 @@
+
+=== eng_sample.txt ===
+lines with a double space: 1 / 10
+  line 6: split(' ') -> 8 words (incl. 1 empty) | split() -> 7 words | text: 'Please keep the books  in the cupboard.'
+  corpus fertility  buggy split(' ')=1.2652   fixed split()=1.2831   distortion=-1.39%
+
+=== hin_sample.txt ===
+lines with a double space: 1 / 10
+  line 9: split(' ') -> 6 words (incl. 1 empty) | split() -> 5 words | text: 'किताबें  अलमारी में रखी हैं।'
+  corpus fertility  buggy split(' ')=7.4485   fixed split()=7.5985   distortion=-1.97%
+
+=== FULL FLORES-200 corpus (1012 lines/lang) -- does the bug survive at scale? ===
+eng: double-space lines=   0/1012  buggy=1.2874  fixed=1.2874  distortion=+0.000%
+hin: double-space lines=   6/1012  buggy=7.8651  fixed=7.8669  distortion=-0.023%
+ben: double-space lines=  71/1012  buggy=13.3848  fixed=13.4383  distortion=-0.398%
+mar: double-space lines=  57/1012  buggy=11.1860  fixed=11.2255  distortion=-0.352%
+kan: double-space lines= 208/1012  buggy=22.5698  fixed=23.0193  distortion=-1.953%
+tam: double-space lines=  75/1012  buggy=25.1270  fixed=25.2523  distortion=-0.496%
+tel: double-space lines= 136/1012  buggy=20.5656  fixed=20.8298  distortion=-1.269%
+mal: double-space lines=  54/1012  buggy=27.5845  fixed=27.6894  distortion=-0.379%

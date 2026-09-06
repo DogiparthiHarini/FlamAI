@@ -1,0 +1,10 @@
+eng   <- eng_Latn   1012 lines -> /Users/manvanthsaikothuri/Desktop/your-submission/partA/corpus/eng.txt
+hin   <- hin_Deva   1012 lines -> /Users/manvanthsaikothuri/Desktop/your-submission/partA/corpus/hin.txt
+ben   <- ben_Beng   1012 lines -> /Users/manvanthsaikothuri/Desktop/your-submission/partA/corpus/ben.txt
+mar   <- mar_Deva   1012 lines -> /Users/manvanthsaikothuri/Desktop/your-submission/partA/corpus/mar.txt
+kan   <- kan_Knda   1012 lines -> /Users/manvanthsaikothuri/Desktop/your-submission/partA/corpus/kan.txt
+tam   <- tam_Taml   1012 lines -> /Users/manvanthsaikothuri/Desktop/your-submission/partA/corpus/tam.txt
+tel   <- tel_Telu   1012 lines -> /Users/manvanthsaikothuri/Desktop/your-submission/partA/corpus/tel.txt
+mal   <- mal_Mlym   1012 lines -> /Users/manvanthsaikothuri/Desktop/your-submission/partA/corpus/mal.txt
+
+OK: all 8 files have 1012 parallel lines.

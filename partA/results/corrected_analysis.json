@@ -1,0 +1,234 @@
+{
+  "gpt2": {
+    "eng": {
+      "tokens": 27044,
+      "words": 21901,
+      "graphemes": 131966,
+      "bytes": 132096,
+      "sentences": 1012
+    },
+    "hin": {
+      "tokens": 200688,
+      "words": 25643,
+      "graphemes": 85957,
+      "bytes": 337439,
+      "sentences": 1012
+    },
+    "ben": {
+      "tokens": 259769,
+      "words": 19506,
+      "graphemes": 81693,
+      "bytes": 348729,
+      "sentences": 1012
+    },
+    "mar": {
+      "tokens": 212471,
+      "words": 19046,
+      "graphemes": 80288,
+      "bytes": 355511,
+      "sentences": 1012
+    },
+    "kan": {
+      "tokens": 367366,
+      "words": 16100,
+      "graphemes": 90371,
+      "bytes": 375341,
+      "sentences": 1012
+    },
+    "tam": {
+      "tokens": 420171,
+      "words": 16775,
+      "graphemes": 99724,
+      "bytes": 421635,
+      "sentences": 1012
+    },
+    "tel": {
+      "tokens": 350748,
+      "words": 16938,
+      "graphemes": 76567,
+      "bytes": 353661,
+      "sentences": 1012
+    },
+    "mal": {
+      "tokens": 409983,
+      "words": 14930,
+      "graphemes": 79428,
+      "bytes": 411741,
+      "sentences": 1012
+    }
+  },
+  "muril-base-cased": {
+    "eng": {
+      "tokens": 27581,
+      "words": 21901,
+      "graphemes": 131966,
+      "bytes": 132096,
+      "sentences": 1012
+    },
+    "hin": {
+      "tokens": 31924,
+      "words": 25643,
+      "graphemes": 85957,
+      "bytes": 337439,
+      "sentences": 1012
+    },
+    "ben": {
+      "tokens": 27613,
+      "words": 19506,
+      "graphemes": 81693,
+      "bytes": 348729,
+      "sentences": 1012
+    },
+    "mar": {
+      "tokens": 29332,
+      "words": 19046,
+      "graphemes": 80288,
+      "bytes": 355511,
+      "sentences": 1012
+    },
+    "kan": {
+      "tokens": 29382,
+      "words": 16100,
+      "graphemes": 90371,
+      "bytes": 375341,
+      "sentences": 1012
+    },
+    "tam": {
+      "tokens": 29204,
+      "words": 16775,
+      "graphemes": 99724,
+      "bytes": 421635,
+      "sentences": 1012
+    },
+    "tel": {
+      "tokens": 33190,
+      "words": 16938,
+      "graphemes": 76567,
+      "bytes": 353661,
+      "sentences": 1012
+    },
+    "mal": {
+      "tokens": 32660,
+      "words": 14930,
+      "graphemes": 79428,
+      "bytes": 411741,
+      "sentences": 1012
+    }
+  },
+  "nllb-200-distilled-600M": {
+    "eng": {
+      "tokens": 30641,
+      "words": 21901,
+      "graphemes": 131966,
+      "bytes": 132096,
+      "sentences": 1012
+    },
+    "hin": {
+      "tokens": 37137,
+      "words": 25643,
+      "graphemes": 85957,
+      "bytes": 337439,
+      "sentences": 1012
+    },
+    "ben": {
+      "tokens": 39122,
+      "words": 19506,
+      "graphemes": 81693,
+      "bytes": 348729,
+      "sentences": 1012
+    },
+    "mar": {
+      "tokens": 38554,
+      "words": 19046,
+      "graphemes": 80288,
+      "bytes": 355511,
+      "sentences": 1012
+    },
+    "kan": {
+      "tokens": 41735,
+      "words": 16100,
+      "graphemes": 90371,
+      "bytes": 375341,
+      "sentences": 1012
+    },
+    "tam": {
+      "tokens": 43393,
+      "words": 16775,
+      "graphemes": 99724,
+      "bytes": 421635,
+      "sentences": 1012
+    },
+    "tel": {
+      "tokens": 40639,
+      "words": 16938,
+      "graphemes": 76567,
+      "bytes": 353661,
+      "sentences": 1012
+    },
+    "mal": {
+      "tokens": 45701,
+      "words": 14930,
+      "graphemes": 79428,
+      "bytes": 411741,
+      "sentences": 1012
+    }
+  },
+  "qwen2.5": {
+    "eng": {
+      "tokens": 27621,
+      "words": 21901,
+      "graphemes": 131966,
+      "bytes": 132096,
+      "sentences": 1012
+    },
+    "hin": {
+      "tokens": 121957,
+      "words": 25643,
+      "graphemes": 85957,
+      "bytes": 337439,
+      "sentences": 1012
+    },
+    "ben": {
+      "tokens": 138814,
+      "words": 19506,
+      "graphemes": 81693,
+      "bytes": 348729,
+      "sentences": 1012
+    },
+    "mar": {
+      "tokens": 127476,
+      "words": 19046,
+      "graphemes": 80288,
+      "bytes": 355511,
+      "sentences": 1012
+    },
+    "kan": {
+      "tokens": 191127,
+      "words": 16100,
+      "graphemes": 90371,
+      "bytes": 375341,
+      "sentences": 1012
+    },
+    "tam": {
+      "tokens": 168828,
+      "words": 16775,
+      "graphemes": 99724,
+      "bytes": 421635,
+      "sentences": 1012
+    },
+    "tel": {
+      "tokens": 193169,
+      "words": 16938,
+      "graphemes": 76567,
+      "bytes": 353661,
+      "sentences": 1012
+    },
+    "mal": {
+      "tokens": 199583,
+      "words": 14930,
+      "graphemes": 79428,
+      "bytes": 411741,
+      "sentences": 1012
+    }
+  }
+}
