@@ -54,11 +54,4 @@ curl -L -o flores200_dataset.tar.gz https://dl.fbaipublicfiles.com/nllb/flores20
 tar -xzf flores200_dataset.tar.gz
 cd ..
 python3 partA/scripts/build_corpus.py
-```
-
-## What's not in the zip
-
-`raw_downloads/` (the full 200-language FLORES tarball, ~100MB extracted), `.venv/`, and
-`.hf_cache/` (downloaded tokenizer files) are excluded as regenerable/bulky. Everything they
-produce that's actually used downstream (`partA/corpus/*.txt`, the analysis outputs) is checked
-in.
+``
