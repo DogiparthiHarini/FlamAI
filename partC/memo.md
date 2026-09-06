@@ -55,11 +55,4 @@ refinement iteration, abandon the rewriter for launch, ship (c) only, and push S
 work to the next cycle. **At any point:** if factual/safety regression exceeds 5%, kill
 immediately regardless of style gains — sounding casual isn't worth being wrong.
 
-## Day-1 experiment
 
-Zero GPU: take the unmodified main model, write 3-5 casual-tone system-prompt variants,
-generate outputs for ~20-30 fixed Hindi/Kannada prompts, reviewer-rate same day. This gives the
-(c)-alone ceiling before spending GPU time, calibrates the reviewer's rubric against real
-outputs (needed before the thresholds above mean anything), and either shows prompting already
-suffices (saving the whole GPU budget) or clearly doesn't — in which case those same rated
-outputs seed rewriter training data on day 2.
